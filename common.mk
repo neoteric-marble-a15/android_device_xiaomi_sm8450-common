@@ -133,7 +133,8 @@ PRODUCT_ODM_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=0 \
     vendor.display.disable_3d_adaptive_tm=0 \
     vendor.display.enable_rounded_corner=0 \
-    vendor.display.vds_allow_hwc=1
+    vendor.display.vds_allow_hwc=1 \
+    debug.sf.enable_hwc_vds=0
 
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.frame_rate_multiple_threshold=120 \
@@ -303,10 +304,9 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPAXiaomiTaroFrameworksOverlay \
-    AOSPAXiaomiTaroSettingsOverlay \
-    AOSPAXiaomiTaroSystemUIOverlay \
     DcDimmingFrameworksOverlay \
+    NeotericXiaomiTaroFrameworksOverlay \
+    NeotericXiaomiTaroSystemUIOverlay \
     XiaomiTaroCarrierConfigOverlay \
     XiaomiTaroFrameworksOverlay \
     XiaomiTaroSettingsOverlay \
@@ -320,6 +320,14 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+
+# Power
+PRODUCT_PACKAGES += \
+android.hardware.power-service-qti \
+android.hardware.power@1.2.vendor \
+
+PRODUCT_COPY_FILES += \
+vendor/qcom/opensource/power/config/taro/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Platform
 TARGET_BOARD_PLATFORM := taro
