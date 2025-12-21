@@ -1,4 +1,4 @@
-# Device proprietary files - from marble OS2.0.4.0.VMRMIXM package, unless pinned
+# All unpinned blobs below are extracted from marble OS2.0.211.0.VMRMIXM
 
 # ADSP
 vendor/bin/adsprpcd
@@ -374,6 +374,7 @@ vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vppservice.rc
 vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml
+vendor/lib64/libdsd2pcm.so
 vendor/lib64/libmisight.so
 vendor/lib64/libvppclient.so
 vendor/lib64/libvppcommon.so
