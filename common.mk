@@ -202,17 +202,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.xiaomi_recovery \
     vendor.lineage.health-service.default
 
-# HWUI & Performance Tweaks
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.render_ahead=2 \
-    ro.surface_flinger.set_idle_timer_ms=800 \
-    dalvik.vm.heaptargetutilization=0.5 \
-    ro.hwui.texture_cache_size=72 \
-    ro.hwui.layer_cache_size=48 \
-    ro.hwui.r_buffer_cache_size=8 \
-    ro.hwui.path_cache_size=32 \
-    ro.hwui.texture_cache_flush_rate=0.4
-
 # Incremental FS
 PRODUCT_VENDOR_PROPERTIES += \
     ro.incremental.enable=1
